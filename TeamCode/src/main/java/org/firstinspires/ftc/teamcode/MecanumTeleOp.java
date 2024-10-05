@@ -9,7 +9,7 @@ import com.qualcomm.hardware.rev.RevHubOrientationOnRobot;
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 
 @TeleOp
-public class FieldCentricMecanumTeleOp extends LinearOpMode {
+public class MecanumTeleOp extends LinearOpMode {
     @Override
     public void runOpMode() throws InterruptedException {
         // Declare our motors
@@ -30,9 +30,8 @@ public class FieldCentricMecanumTeleOp extends LinearOpMode {
         IMU imu = hardwareMap.get(IMU.class, "imu");
         // Adjust the orientation parameters to match your robot
         IMU.Parameters parameters = new IMU.Parameters(new RevHubOrientationOnRobot(
-                //TODO: Change these once robot is cadded/built
-                RevHubOrientationOnRobot.LogoFacingDirection.UP,
-                RevHubOrientationOnRobot.UsbFacingDirection.FORWARD));
+                RevHubOrientationOnRobot.LogoFacingDirection.RIGHT,
+                RevHubOrientationOnRobot.UsbFacingDirection.UP));
         // Without this, the REV Hub's orientation is assumed to be logo up / USB forward
         imu.initialize(parameters);
 
@@ -73,6 +72,17 @@ public class FieldCentricMecanumTeleOp extends LinearOpMode {
             backLeft.setPower(backLeftPower);
             frontRight.setPower(frontRightPower);
             backRight.setPower(backRightPower);
+
+            double multiplier;
+            if (gamepad1.right_bumper) {
+                multiplier = 0.6;
+
+            }else multiplier = 1;
+            frontLeft.setPower(frontLeftPower *multiplier );
+            backRight.setPower(backLeftPower *multiplier);
+            frontRight.setPower(frontRightPower *multiplier);
+            backLeft.setPower(backRightPower *multiplier);
+
         }
     }
 }
