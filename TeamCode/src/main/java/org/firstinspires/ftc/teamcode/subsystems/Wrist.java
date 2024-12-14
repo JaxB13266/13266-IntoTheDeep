@@ -16,7 +16,7 @@ public class Wrist {
 
 
     public final double Score = 0.1;
-    public final double Intake = 0.5;
+    public final double Intake = 0.7;
     public final double rest = 0;
 
 
@@ -31,7 +31,10 @@ public class Wrist {
         wristS(rest);
     }
 
-
+    public void wristSoloTeleOp() {
+        if (driver2.b) wristS(Score);
+        if (driver2.y) wristS(Intake);
+    }
 
     public void wristTeleOp(){
         if (driver2.left_bumper) wristS(Intake);

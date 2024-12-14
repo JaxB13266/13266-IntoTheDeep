@@ -42,7 +42,7 @@ public class FieldCentric {
         //SET UP HUB POSITION
         IMU imu = hardwareMap.get(IMU.class, "imu");
         IMU.Parameters parameters = new IMU.Parameters(new RevHubOrientationOnRobot(
-                RevHubOrientationOnRobot.LogoFacingDirection.RIGHT,
+                RevHubOrientationOnRobot.LogoFacingDirection.LEFT,
                 RevHubOrientationOnRobot.UsbFacingDirection.UP));
 
         imu.initialize(parameters);
@@ -50,7 +50,7 @@ public class FieldCentric {
     }
 
     public void fieldCentric() {
-        if(Driver1.y){
+        if(Driver1.dpad_left){
             speed=.5;
         } else{
             speed=1;

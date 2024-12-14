@@ -10,22 +10,23 @@ import org.firstinspires.ftc.teamcode.subsystems.FieldCentric;
 import org.firstinspires.ftc.teamcode.subsystems.Slides;
 import org.firstinspires.ftc.teamcode.subsystems.Wrist;
 
+
 @TeleOp
-public class TeleOpMain extends LinearOpMode {
+public class TeleOpSolo extends LinearOpMode {
     @Override
     public void runOpMode() throws InterruptedException {
         FieldCentric fieldCentricDrive= new FieldCentric(this);
-        Slides slide= new Slides(this);
-        Wrist wrist= new Wrist(this);
-        Claw claw= new Claw(this);
         Arm arm= new Arm(this);
+        Wrist wrist= new Wrist(this);
+        Slides slides= new Slides(this);
+        Claw claw= new Claw(this);
         waitForStart();
         while (opModeIsActive()) {
             fieldCentricDrive.fieldCentric();
-            slide.slidesTeleOp();
-            wrist.wristTeleOp();
-            claw.clawTeleOp();
-            arm.armTeleOp();
+            arm.armSoloTeleOP();
+            wrist.wristSoloTeleOp();
+            slides.slidesSoloTeleOp();
+            claw.clawSoloTeleOp();
         }
     }
 }

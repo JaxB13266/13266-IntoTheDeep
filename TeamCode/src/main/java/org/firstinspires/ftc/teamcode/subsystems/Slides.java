@@ -11,26 +11,24 @@ import org.firstinspires.ftc.robotcore.external.Telemetry;
 public class Slides {
 
     public static double POWER = .7;
-    public static int HighBasket =1750;
-    public static int SpecimenIntake = 100;
-    public static int HighRung = 700;
-    public static int RESET = 0;
-    public static int MANUAL_MOVE_SPEED = 10;
-    private int position = 0;
+    public static int MID = 1750;
+    public static int DOWN = 100;
 
     public final DcMotor leftSlide;
     public final DcMotor rightSLide;
 
-    private final HardwareMap hardwareMap;
-    private final Gamepad Driver2;
+    public final HardwareMap hardwareMap;
+    public final Gamepad Driver2;
+    public final Gamepad Driver1;
     public final Telemetry telemetry;
 
     public Slides(OpMode opMode) {
         Driver2 = opMode.gamepad2;
+        Driver1 = opMode.gamepad1;
         hardwareMap = opMode.hardwareMap;
         telemetry = opMode.telemetry;
 
-        leftSlide = hardwareMap.get(DcMotor.class,"leftSlide");
+        leftSlide = hardwareMap.get(DcMotor.class, "leftSlide");
         leftSlide.setDirection(DcMotorSimple.Direction.FORWARD);
         leftSlide.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
@@ -50,10 +48,9 @@ public class Slides {
 
     }
 
-    public void slidesTeleOp(){
-        if (Driver2.a) moveLowBasket();
-        if (Driver2.b) moveHighRung();
-        if (Driver2.x) moveHighBasket();
+    public void slidesTeleOp() {
+        if (Driver2.a) moveLow();
+        if (Driver2.x) moveMidBasket();
 
 
         // Add telemetry data
@@ -65,44 +62,33 @@ public class Slides {
         telemetry.update();
     }
 
+    public void slidesSoloTeleOp() {
+        if (Driver1.dpad_up) moveMidBasket();
+        if (Driver1.dpad_down) moveLow();
 
-    public void moveHighBasket(){
-        leftSlide.setPower(POWER);
-        leftSlide.setTargetPosition(HighBasket);
+        // Add telemetry data
+        telemetry.addData("Slide Position", leftSlide.getCurrentPosition());
+        //Telemetry provide a means by which data can be transmitted from the robot controller
+        // to the driver station and displayed on the driver station screen
 
-        rightSLide.setPower(POWER);
-        rightSLide.setTargetPosition(HighBasket);
-    }
-    public void moveLowBasket() {
-        leftSlide.setPower(POWER);
-        leftSlide.setTargetPosition(SpecimenIntake);
-
-        rightSLide.setPower(POWER);
-        rightSLide.setTargetPosition(SpecimenIntake);
-
-    }
-    public void moveHighRung() {
-        leftSlide.setPower(POWER);
-        leftSlide.setTargetPosition(HighRung);
-
-        rightSLide.setPower(POWER);
-        rightSLide.setTargetPosition(HighRung);
-
-    }
-    public void Reset(){
-        leftSlide.setPower(POWER);
-        leftSlide.setTargetPosition(RESET);
-
-        rightSLide.setPower(POWER);
-        rightSLide.setTargetPosition(RESET);
-    }
-    public void moveMotors(int position){
-        this.position = position;
-        leftSlide.setTargetPosition(position);
-        rightSLide.setTargetPosition(position);
-        leftSlide.setPower(POWER);
-        rightSLide.setPower(POWER);
-
+        // Update the telemetry to reflect the changes on the Driver Hub
+        telemetry.update();
     }
 
+    public void moveMidBasket() {
+        leftSlide.setPower(POWER);
+        leftSlide.setTargetPosition(MID);
+
+        rightSLide.setPower(POWER);
+        rightSLide.setTargetPosition(MID);
+    }
+
+    public void moveLow() {
+        leftSlide.setPower(POWER);
+        leftSlide.setTargetPosition(DOWN);
+
+        rightSLide.setPower(POWER);
+        rightSLide.setTargetPosition(DOWN);
+
+    }
 }

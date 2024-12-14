@@ -15,15 +15,17 @@ public class Arm {
     public  Servo armRightServo;
 
     public  Gamepad driver2;
+    public Gamepad driver1;
     public HardwareMap hardwareMap;
 
 
-    public final double scorePosition = .3;
-    public double intakePosition = 0;
+    public final double scorePosition = 0;
+    public double intakePosition = 0.3;
     public double rest = 0;
 
     public Arm(OpMode opMode) {
         driver2 = opMode.gamepad2;
+        driver1 = opMode.gamepad1;
         hardwareMap = opMode.hardwareMap;
 
         armLeftServo = opMode.hardwareMap.get(Servo.class, "armLeftServo");
@@ -31,6 +33,7 @@ public class Arm {
 
         armLeftServo.setDirection(Servo.Direction.REVERSE);
         armRightServo.setDirection(Servo.Direction.FORWARD);
+
         //what happens on init
         rightServo(rest);
     }
@@ -44,8 +47,6 @@ public class Arm {
             leftServo(scorePosition);
             rightServo(scorePosition);
         }
-        //if statements
-
 
     }
     public void rightServo(double position) {
@@ -56,7 +57,16 @@ public class Arm {
     }
 
 
-
+    public void armSoloTeleOP() {
+        if (driver2.a){
+            rightServo(intakePosition);
+            leftServo(intakePosition);
+        }
+        if (driver2.x){
+            rightServo(scorePosition);
+            leftServo(scorePosition);
+        }
+    }
 }
 
 
