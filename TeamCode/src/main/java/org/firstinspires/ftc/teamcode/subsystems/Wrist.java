@@ -28,7 +28,7 @@ public class Wrist {
 
         wristServo.setDirection(Servo.Direction.FORWARD);
 
-        wristS(rest);
+        wristS(Intake);
     }
 
     public void wristSoloTeleOp() {

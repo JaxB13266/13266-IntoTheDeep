@@ -16,7 +16,7 @@ public class    Claw {
     public HardwareMap hardwareMap;
     public Telemetry telemetry;
     public final double OPENED = 0.6;
-    public final double CLOSED = 0.45;
+    public final double CLOSED = 0.2;
     public Claw(OpMode opMode) {
         this.hardwareMap = opMode.hardwareMap;
         this.gamepad2 = opMode.gamepad2;
@@ -24,6 +24,7 @@ public class    Claw {
         claw = (Servo) hardwareMap.get("clawServo");
 
         claw.setDirection(Servo.Direction.FORWARD);
+        claw.setPosition(CLOSED);
     }
     public void clawTeleOp() {
         if (gamepad2.left_trigger>0.1) clawS(OPENED);

@@ -16,7 +16,7 @@ public class Autos extends LinearOpMode {
         if (isStopRequested()) return;
         sampleMecanumDrive.followTrajectory(
                 sampleMecanumDrive.trajectoryBuilder(new Pose2d())
-                        .forward(85)
+                        .forward(3)
                         .build()
         );
     }

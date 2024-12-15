@@ -50,11 +50,6 @@ public class FieldCentric {
     }
 
     public void fieldCentric() {
-        if(Driver1.dpad_left){
-            speed=.5;
-        } else{
-            speed=1;
-        }
         double y = -Driver1.left_stick_y;
         double x = Driver1.left_stick_x;
         double rx = Driver1.right_stick_x;

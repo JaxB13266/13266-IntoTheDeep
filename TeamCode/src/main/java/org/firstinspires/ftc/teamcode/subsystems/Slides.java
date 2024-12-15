@@ -10,9 +10,9 @@ import org.firstinspires.ftc.robotcore.external.Telemetry;
 
 public class Slides {
 
-    public static double POWER = .7;
+    public static double POWER = .5;
     public static int MID = 1750;
-    public static int DOWN = -50;
+    public static int DOWN = 25;
 
     public final DcMotor leftSlide;
     public final DcMotor rightSLide;

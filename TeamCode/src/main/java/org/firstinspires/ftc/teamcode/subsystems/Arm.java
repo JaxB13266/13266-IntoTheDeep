@@ -20,7 +20,7 @@ public class Arm {
 
 
     public final double scorePosition = 0;
-    public double intakePosition = 0.3;
+    public double intakePosition = 0.29;
     public double rest = 0;
 
     public Arm(OpMode opMode) {
