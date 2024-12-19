@@ -11,17 +11,19 @@ import org.firstinspires.ftc.robotcore.external.Telemetry;
 public class Wrist {
     public Servo wristServo;
     public Gamepad driver2;
+    public Gamepad driver1;
     public HardwareMap hardwareMap;
     public Telemetry telemetry;
 
 
     public final double Score = 0.1;
     public final double Intake = 0.7;
-    public final double rest = 0;
+    public final double mid = .3;
 
 
     public Wrist(OpMode opMode) {
         driver2 = opMode.gamepad2;
+        driver1 = opMode.gamepad1;
         hardwareMap = opMode.hardwareMap;
 
         wristServo = opMode.hardwareMap.get(Servo.class, "wristServo");
@@ -32,8 +34,8 @@ public class Wrist {
     }
 
     public void wristSoloTeleOp() {
-        if (driver2.b) wristS(Score);
-        if (driver2.y) wristS(Intake);
+        if (driver1.b) wristS(Score);
+        if (driver1.y) wristS(Intake);
     }
 
     public void wristTeleOp(){

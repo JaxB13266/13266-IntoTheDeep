@@ -20,7 +20,7 @@ public class Arm {
 
 
     public final double scorePosition = 0;
-    public double intakePosition = 0.29;
+    public double intakePosition = 0.3;
     public double rest = 0;
 
     public Arm(OpMode opMode) {
@@ -58,11 +58,11 @@ public class Arm {
 
 
     public void armSoloTeleOP() {
-        if (driver2.a){
+        if (driver1.a){
             rightServo(intakePosition);
             leftServo(intakePosition);
         }
-        if (driver2.x){
+        if (driver1.x){
             rightServo(scorePosition);
             leftServo(scorePosition);
         }
