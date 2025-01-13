@@ -31,19 +31,19 @@ public class Arm {
         armLeftServo = opMode.hardwareMap.get(Servo.class, "armLeftServo");
         armRightServo = opMode.hardwareMap.get(Servo.class, "armRightServo");
 
-        armLeftServo.setDirection(Servo.Direction.REVERSE);
+        armLeftServo.setDirection(Servo.Direction.FORWARD);
         armRightServo.setDirection(Servo.Direction.FORWARD);
 
         //what happens on init
         rightServo(rest);
+        leftServo(0);
     }
 
     public  void armTeleOp() {
         if (driver2.dpad_down) {
             rightServo(intakePosition);
             leftServo(intakePosition);
-        }
-        if (driver2.dpad_right) {
+        } else if (driver2.dpad_right) {
             leftServo(scorePosition);
             rightServo(scorePosition);
         }
