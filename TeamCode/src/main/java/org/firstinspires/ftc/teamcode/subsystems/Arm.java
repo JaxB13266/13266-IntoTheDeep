@@ -20,7 +20,7 @@ public class Arm {
 
 
     public final double scorePosition = 0;
-    public double intakePosition = 0.3;
+    public double intakePosition = 0.4;
     public double rest = 0;
 
     public Arm(OpMode opMode) {
@@ -32,7 +32,7 @@ public class Arm {
         armRightServo = opMode.hardwareMap.get(Servo.class, "armRightServo");
 
         armLeftServo.setDirection(Servo.Direction.FORWARD);
-        armRightServo.setDirection(Servo.Direction.FORWARD);
+        armRightServo.setDirection(Servo.Direction.REVERSE);
 
         //what happens on init
         rightServo(rest);

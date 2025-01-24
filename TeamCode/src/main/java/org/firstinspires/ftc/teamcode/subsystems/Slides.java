@@ -10,9 +10,10 @@ import org.firstinspires.ftc.robotcore.external.Telemetry;
 
 public class Slides {
 
-    public static double POWER = .6;
+    public static double POWER = 1;
+    public static int HIGH = 2550;
     public static int MID = 1550;
-    public static int DOWN = 20;
+    public static int DOWN = 12;
 
     public final DcMotor leftSlide;
     public final DcMotor rightSLide;
@@ -51,6 +52,7 @@ public class Slides {
     public void slidesTeleOp() {
         if (Driver2.x) moveLow();
         if (Driver2.a) moveMidBasket();
+        if (Driver2.y) moveHighBasket();
 
 
         // Add telemetry data
@@ -90,5 +92,12 @@ public class Slides {
         rightSLide.setPower(POWER);
         rightSLide.setTargetPosition(DOWN);
 
+    }
+    public void moveHighBasket(){
+        leftSlide.setPower(POWER);
+        leftSlide.setTargetPosition(HIGH);
+
+        rightSLide.setPower(POWER);
+        rightSLide.setTargetPosition(HIGH);
     }
 }

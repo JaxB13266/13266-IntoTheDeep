@@ -17,10 +17,11 @@ public class Wrist {
     public Telemetry telemetry;
 
 
-    public final double Score = 0.1;
-    public final double Intake = 0.7;
+    public final double Score = .7;
+    public final double Intake = 0;
     public final double turnRight = .3;
-    public final double turnLeft = .1;
+    public final double turnLeft = 0;
+
 
 
     public Wrist(OpMode opMode) {
@@ -46,8 +47,8 @@ public class Wrist {
     public void wristTeleOp(){
         if (driver2.left_bumper) wristS(Intake);
         else if (driver2.right_bumper) wristS(Score);
-        if (driver2.b) turnS(turnLeft);
-        else if (driver2.y) turnS(turnRight);
+        if (driver2.dpad_up) turnS(turnLeft);
+        else if (driver2.dpad_left) turnS(turnRight);
 
     }
     public void wristS(double rest){wristServo.setPosition(rest);}
