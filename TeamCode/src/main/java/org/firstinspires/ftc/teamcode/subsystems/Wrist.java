@@ -18,9 +18,9 @@ public class Wrist {
 
 
     public final double Score = .7;
-    public final double Intake = 0;
-    public final double turnRight = .3;
-    public final double turnLeft = 0;
+    public final double Intake = -.3;
+    public final double turnRight = -.4;
+    public final double turnLeft = -.3;
 
 
 
@@ -35,7 +35,8 @@ public class Wrist {
         wristServo.setDirection(Servo.Direction.FORWARD);
         turnWristServo.setDirection(Servo.Direction.FORWARD);
 
-        wristS(Intake);
+        wristS(0);
+        turnS(.1);
 
     }
 
@@ -45,10 +46,11 @@ public class Wrist {
     }
 
     public void wristTeleOp(){
-        if (driver2.left_bumper) wristS(Intake);
+        if (driver2.left_bumper) wristS(0);
         else if (driver2.right_bumper) wristS(Score);
-        if (driver2.dpad_up) turnS(turnLeft);
-        else if (driver2.dpad_left) turnS(turnRight);
+        if (driver2.dpad_up) turnS(.4);
+       // else if (driver2.dpad_left) turnS(-1);
+        if (driver2.b) turnS(.1);
 
     }
     public void wristS(double rest){wristServo.setPosition(rest);}

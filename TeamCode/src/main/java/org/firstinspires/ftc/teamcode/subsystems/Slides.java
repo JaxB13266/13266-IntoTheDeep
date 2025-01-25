@@ -11,9 +11,9 @@ import org.firstinspires.ftc.robotcore.external.Telemetry;
 public class Slides {
 
     public static double POWER = 1;
-    public static int HIGH = 2550;
+    public static int HIGH = 3000;
     public static int MID = 1550;
-    public static int DOWN = 12;
+    public static int DOWN = 20;
 
     public final DcMotor leftSlide;
     public final DcMotor rightSLide;
@@ -30,11 +30,11 @@ public class Slides {
         telemetry = opMode.telemetry;
 
         leftSlide = hardwareMap.get(DcMotor.class, "leftSlide");
-        leftSlide.setDirection(DcMotorSimple.Direction.FORWARD);
+        leftSlide.setDirection(DcMotorSimple.Direction.REVERSE);
         leftSlide.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         rightSLide = hardwareMap.get(DcMotor.class, "rightSlide");
-        rightSLide.setDirection(DcMotorSimple.Direction.REVERSE);
+        rightSLide.setDirection(DcMotorSimple.Direction.FORWARD);
         rightSLide.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         leftSlide.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -50,8 +50,8 @@ public class Slides {
     }
 
     public void slidesTeleOp() {
-        if (Driver2.x) moveLow();
-        if (Driver2.a) moveMidBasket();
+        if (Driver2.a) moveLow();
+       // if (Driver2.a) moveMidBasket();
         if (Driver2.y) moveHighBasket();
 
 

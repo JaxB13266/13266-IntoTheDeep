@@ -30,11 +30,11 @@ public class    Claw {
     }
     public void clawTeleOp() {
         if (gamepad2.left_trigger>0.1) clawS(OPENED);
-        else if (gamepad2.right_trigger>0.1) clawS(CLOSED);
+        if (gamepad2.right_trigger>0.1) clawS(CLOSED);
     }
     public void clawSoloTeleOp() {
         if (gamepad1.left_trigger>0.1) clawS(CLOSED);
-        else if (gamepad1.right_trigger>0.1) clawS(OPENED);
+        if (gamepad1.right_trigger>0.1) clawS(OPENED);
     }
     public void clawS(double position) {
         claw.setPosition(position);
