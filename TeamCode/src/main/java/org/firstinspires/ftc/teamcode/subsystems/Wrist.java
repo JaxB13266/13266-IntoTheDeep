@@ -48,9 +48,9 @@ public class Wrist {
     public void wristTeleOp(){
         if (driver2.left_bumper) wristS(0);
         else if (driver2.right_bumper) wristS(Score);
-        if (driver2.dpad_up) turnS(.4);
-       // else if (driver2.dpad_left) turnS(-1);
-        if (driver2.b) turnS(.1);
+        if (driver1.dpad_up) turnS(.4);
+        if (driver1.dpad_left) turnS(-1);
+        if (driver1.dpad_right) turnS(.1);
 
     }
     public void wristS(double rest){wristServo.setPosition(rest);}
