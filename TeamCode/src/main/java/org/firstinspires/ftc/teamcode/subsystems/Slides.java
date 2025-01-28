@@ -50,8 +50,8 @@ public class Slides {
     }
 
     public void slidesTeleOp() {
-        if (Driver2.x) moveLow();
-        if (Driver2.a) moveMidBasket();
+        if (Driver2.a) moveLow();
+       // if (Driver2.a) moveMidBasket();
         if (Driver2.y) moveHighBasket();
 
 

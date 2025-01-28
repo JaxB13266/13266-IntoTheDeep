@@ -43,7 +43,7 @@ public class Arm {
         if (driver2.dpad_down) {
             rightServo(intakePosition);
             leftServo(intakePosition);
-        } else if (driver2.dpad_up) {
+        } else if (driver2.dpad_right) {
             leftServo(scorePosition);
             rightServo(scorePosition);
         }
