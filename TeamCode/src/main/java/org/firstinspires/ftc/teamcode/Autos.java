@@ -2,6 +2,7 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.acmerobotics.roadrunner.geometry.Pose2d;
+import com.acmerobotics.roadrunner.geometry.Vector2d;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
@@ -22,13 +23,12 @@ public class Autos extends LinearOpMode {
         sampleMecanumDrive.followTrajectory(
                 sampleMecanumDrive.trajectoryBuilder(new Pose2d())
                         //.forward(3)
+                       // .lineToYSplineHeading(48,0.75)
+                        .strafeTo(new Vector2d(56,55))
 
                         .build()
 
                 );
-        slides.moveMidBasket();
-
-
     }
 
 }

@@ -13,7 +13,7 @@ public class Slides {
     public static double POWER = 1;
     public static int HIGH = 3000;
     public static int MID = 1550;
-    public static int DOWN = 20;
+    public static int DOWN = 50;
 
     public final DcMotor leftSlide;
     public final DcMotor rightSLide;
