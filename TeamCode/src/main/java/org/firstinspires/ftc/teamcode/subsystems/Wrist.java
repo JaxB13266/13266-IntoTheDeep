@@ -41,8 +41,10 @@ public class Wrist {
     }
 
     public void wristSoloTeleOp() {
-        if (driver1.b) wristS(Score);
-        if (driver1.y) wristS(Intake);
+        if (driver1.left_bumper) wristS(0);
+        else if (driver1.right_bumper) wristS(Score);
+        if (driver1.b) turnS(.4);
+        if (driver1.y)turnS(.1);
     }
 
     public void wristTeleOp(){
