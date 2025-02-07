@@ -20,7 +20,7 @@ public class Arm {
 
 
     public final double scorePosition = 0;
-    public double intakePosition = 0.5;
+    public double intakePosition = .39;
     public double rest = 0;
 
     public Arm(OpMode opMode) {
@@ -36,14 +36,14 @@ public class Arm {
 
         //what happens on init
         rightServo(rest);
-        leftServo(0);
+        leftServo(rest);
     }
 
     public  void armTeleOp() {
         if (driver2.dpad_down) {
             rightServo(intakePosition);
             leftServo(intakePosition);
-        } else if (driver2.dpad_right) {
+        } else if (driver2.dpad_up) {
             leftServo(scorePosition);
             rightServo(scorePosition);
         }
