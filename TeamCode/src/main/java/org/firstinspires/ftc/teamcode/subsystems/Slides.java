@@ -55,6 +55,7 @@ public class Slides {
         if (Driver2.y) moveHighBasket();
 
 
+
         // Add telemetry data
         telemetry.addData("Slide Position", leftSlide.getCurrentPosition());
         //Telemetry provide a means by which data can be transmitted from the robot controller
@@ -79,6 +80,10 @@ public class Slides {
         // Update the telemetry to reflect the changes on the Driver Hub
         telemetry.update();
     }
+    public void slider() {
+        if (Driver2.left_stick_y>-.1) setPOWER();
+        if (Driver2.left_stick_y<.1) setPOWER();
+    }
 
     public void moveMidBasket() {
         leftSlide.setPower(POWER);
@@ -102,5 +107,10 @@ public class Slides {
 
         rightSLide.setPower(POWER);
         rightSLide.setTargetPosition(HIGH);
+    }
+
+    public  void setPOWER( ) {
+        leftSlide.setPower(POWER);
+        rightSLide.setPower(POWER);
     }
 }

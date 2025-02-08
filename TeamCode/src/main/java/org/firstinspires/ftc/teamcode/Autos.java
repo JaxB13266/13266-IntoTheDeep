@@ -1,4 +1,4 @@
-/*
+
 
 
 package org.firstinspires.ftc.teamcode;
@@ -6,10 +6,12 @@ package org.firstinspires.ftc.teamcode;
 
 import com.acmerobotics.roadrunner.Pose2d;
 import com.acmerobotics.roadrunner.Vector2d;
+import com.acmerobotics.roadrunner.ftc.Actions;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 import org.firstinspires.ftc.teamcode.newRoadRunner.MecanumDrive;
+import org.firstinspires.ftc.teamcode.newRoadRunner.tuning.TuningOpModes;
 import org.firstinspires.ftc.teamcode.subsystems.Arm;
 import org.firstinspires.ftc.teamcode.subsystems.Slides;
 
@@ -17,22 +19,18 @@ import org.firstinspires.ftc.teamcode.subsystems.Slides;
 
 public class Autos extends LinearOpMode {
     @Override
-    public void runOpMode() throws InterruptedException{
-        MecanumDrive sampleMecanumDrive = new MecanumDrive(hardwareMap);
-        Slides slides = new Slides(this );
-        Arm arm = new Arm(this);
-        waitForStart();
-        if (isStopRequested()) return;
-        MecanumDrive.followTrajectory(
-                sampleMecanumDrive.trajectoryBuilder(new Pose2d())
-                       .forward(3)
-                       // .lineToYSplineHeading(48,0.75)
-                        .strafeTo(new Vector2d(56,55))
+    public void runOpMode() throws InterruptedException {
+        Pose2d beginPose = new Pose2d(-18, 65, 0);
+            MecanumDrive drive = new MecanumDrive(hardwareMap, beginPose);
 
-                        .build()
+            waitForStart();
 
-                );
+            Actions.runBlocking(
+                    drive.actionBuilder(beginPose)
+                            .strafeTo(new Vector2d(-52,65))
+
+
+                            .build());
+        }
     }
 
-}
-*/

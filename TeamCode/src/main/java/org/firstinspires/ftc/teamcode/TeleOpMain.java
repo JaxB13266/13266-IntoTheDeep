@@ -16,6 +16,7 @@ public class TeleOpMain extends LinearOpMode {
     public void runOpMode() throws InterruptedException {
             FieldCentric fieldCentricDrive= new FieldCentric(this);
             Slides slide= new Slides(this);
+            Slides slides= new Slides(this);
             Wrist wrist= new Wrist(this);
             Claw claw= new Claw(this);
             Arm arm= new Arm(this);
@@ -26,6 +27,7 @@ public class TeleOpMain extends LinearOpMode {
             wrist.wristTeleOp();
             claw.clawTeleOp();
             arm.armTeleOp();
+            slides.slider();
         }
     }
 }

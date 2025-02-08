@@ -19,11 +19,11 @@ public class BacketBlue {
 
 
 
-        myBot.runAction(myBot.getDrive().actionBuilder(new Pose2d(18, 65, 300))
-                                .lineToYSplineHeading(58,0.75)
-                        .strafeTo(new Vector2d(56,56))
-                        .lineToXSplineHeading(58,3.15)
-                        .strafeTo(new Vector2d(-52,60))
+        myBot.runAction(myBot.getDrive().actionBuilder(new Pose2d(-18, 65, 300))
+                                //.lineToYSplineHeading(new Vector2d(0,98,97,98))
+                // .strafeTo(new Vector2d(56,56))
+                        //.lineToXSplineHeading(-56,0)
+                        .strafeTo(new Vector2d(-52,65))
                                // .splineToLinearHeading(new Pose2d(60, 48, Math.toRadians(-90)), Math.toRadians(50))
                 // .splineToLinearHeading(new Pose2d(40, 38, Math.toRadians(-90)), Math.toRadians(50))
                // .splineToLinearHeading(new Pose2d(40, 38, Math.toRadians(-90)), Math.toRadians(50))
