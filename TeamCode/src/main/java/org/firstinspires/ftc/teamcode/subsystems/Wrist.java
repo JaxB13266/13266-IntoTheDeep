@@ -48,8 +48,8 @@ public class Wrist {
     }
 
     public void wristTeleOp(){
-        if (driver2.left_bumper) wristS(Intake);
-        else if (driver2.right_bumper) wristS(Score);
+        if (driver2.right_bumper) wristS(Intake);
+        else if (driver2.left_bumper) wristS(Score);
         if (driver2.dpad_left) turnS(turnLeft);
         if (driver2.dpad_right) turnS(turnRight);
 
