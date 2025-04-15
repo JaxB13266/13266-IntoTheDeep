@@ -83,24 +83,24 @@ public class Slides {
 
 
     public void moveMidBasket() {
-       /* leftSlide.setPower(POWER);
-        leftSlide.setTargetPosition(MID);*/
+        leftSlide.setPower(POWER);
+        leftSlide.setTargetPosition(MID);
 
         rightSLide.setPower(POWER);
         rightSLide.setTargetPosition(MID);
     }
 
     public void moveLow() {
-       /* leftSlide.setPower(POWER);
-        leftSlide.setTargetPosition(DOWN);*/
+        leftSlide.setPower(POWER);
+        leftSlide.setTargetPosition(DOWN);
 
         rightSLide.setPower(POWER);
         rightSLide.setTargetPosition(DOWN);
 
     }
     public void moveHighBasket(){
-       /* leftSlide.setPower(POWER);
-        leftSlide.setTargetPosition(HIGH);*/
+        leftSlide.setPower(POWER);
+        leftSlide.setTargetPosition(HIGH);
 
         rightSLide.setPower(POWER);
         rightSLide.setTargetPosition(HIGH);

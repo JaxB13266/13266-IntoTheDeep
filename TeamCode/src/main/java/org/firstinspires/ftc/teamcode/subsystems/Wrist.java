@@ -54,6 +54,12 @@ public class Wrist {
         if (driver2.dpad_right) turnS(turnRight);
 
     }
+    public void setWristBack(){
+        wristServo.setPosition(0);
+    }
+    public void setWristForward(){
+        wristServo.setPosition(Score);
+    }
     public void wristS(double rest){wristServo.setPosition(rest);}
     public void turnS (double rest){turnWristServo.setPosition(rest);}
 

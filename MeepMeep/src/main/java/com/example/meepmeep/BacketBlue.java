@@ -23,8 +23,11 @@ public class BacketBlue {
                                 //.lineToYSplineHeading(new Vector2d(0,98,97,98))
                 // .strafeTo(new Vector2d(56,56))
                         //.lineToXSplineHeading(-56,0)
-                        .strafeTo(new Vector2d(-52,65))
-                               // .splineToLinearHeading(new Pose2d(60, 48, Math.toRadians(-90)), Math.toRadians(50))
+                        //.strafeTo(new Vector2d(-52,65))
+
+                //.splineToLinearHeading(new Pose2d(60, 56,Math.toRadians(45)), Math.toRadians(35))
+
+                .splineToLinearHeading(new Pose2d(56, 56, Math.toRadians(50)), Math.toRadians(45))
                 // .splineToLinearHeading(new Pose2d(40, 38, Math.toRadians(-90)), Math.toRadians(50))
                // .splineToLinearHeading(new Pose2d(40, 38, Math.toRadians(-90)), Math.toRadians(50))
                 .build());

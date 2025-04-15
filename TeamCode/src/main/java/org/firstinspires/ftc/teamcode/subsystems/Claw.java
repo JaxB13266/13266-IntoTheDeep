@@ -36,6 +36,12 @@ public class    Claw {
         if (gamepad1.left_trigger>0.1) clawS(CLOSED);
         if (gamepad1.right_trigger>0.1) clawS(OPENED);
     }
+    public void setClawOpened(){
+        claw.setPosition(OPENED);
+    }
+    public void setClawClosed(){
+        claw.setPosition(CLOSED);
+    }
     public void clawS(double position) {
         claw.setPosition(position);
     }

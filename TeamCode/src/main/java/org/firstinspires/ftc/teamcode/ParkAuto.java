@@ -24,8 +24,7 @@ public class ParkAuto extends LinearOpMode {
 
             Actions.runBlocking(
                     drive.actionBuilder(beginPose)
-                            .strafeTo(new Vector2d(-80,65))
-
+                            .splineToLinearHeading(new Pose2d(56, 56, Math.toRadians(50)), Math.toRadians(45))
 
                             .build());
         }

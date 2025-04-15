@@ -67,4 +67,12 @@ public class Arm {
             leftServo(scorePosition);
         }
     }
+    public void setArmUp(){
+        armLeftServo.setPosition(scorePosition);
+        armRightServo.setPosition(scorePosition);
+    }
+    public void setArmDown(){
+        armRightServo.setPosition(intakePosition);
+        armLeftServo.setPosition(intakePosition);
+    }
 }
