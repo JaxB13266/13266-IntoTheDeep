@@ -47,6 +47,7 @@ public class SampleAuto extends LinearOpMode {
             sleep(1000);
             claw.setClawOpened();
             sleep(1000);
+            //sbsjsb jxbjshhndhjbsxjhdnbxjsmhb cjsb bcj
         }
         }
     }
